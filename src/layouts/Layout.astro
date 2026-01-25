@@ -1,35 +1,27 @@
 ---
 interface Props {
-	title: string;
+    title: string;
 }
 const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es" class="scroll-smooth">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{title}</title>
-		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-	</head>
-	<body class="bg-white text-slate-900 antialiased font-['Inter']">
-		<slot />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <title>{title}</title>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    </head>
+    <body class="bg-white text-slate-900 antialiased font-sans">
+        <slot />
 
-		<style is:global>
-			/* Fuentes para títulos */
-			h1, h2, h3, .font-outfit { 
-				font-family: 'Outfit', sans-serif; 
-			}
-
-			/* Utilidades para el Navbar móvil */
-			@media (max-width: 768px) {
-				.hidden-mobile { display: none !important; }
-			}
-			@media (min-width: 769px) {
-				.visible-mobile { display: none !important; }
-			}
-		</style>
-	</body>
+        <style is:global>
+            /* Aplicamos la fuente Outfit a todos los encabezados automáticamente */
+            h1, h2, h3 { 
+                font-family: 'Outfit', sans-serif; 
+            }
+        </style>
+    </body>
 </html>
