@@ -1,18 +1,18 @@
 ---
-import AnimatedTitle from "./AnimatedTitle.jsx";
-import HeroCarousel from "./HeroCarousel.jsx";
+import AnimatedTitle from "../ui/AnimatedTitle.jsx";
+import HeroCarousel from "../ui/HeroCarousel";
 
 // --- IMPORTA TUS IMÁGENES AQUÍ ---
-import mainImg from "../assets/logo-grande.png";
-import imgFresa from "../assets/fresa.jpg";
-import imgZarza from "../assets/zarzamora.png";
-import imgArandano from "../assets/arandano.png";
-import imgFrambuesa from "../assets/frambuesa.png";
+import mainImg from "../../assets/logo-grande.png";
+import imgFresa from "../../assets/fresa.jpg";
+import imgZarza from "../../assets/zarzamora.png";
+import imgArandano from "../../assets/arandano.png";
+import imgFrambuesa from "../../assets/frambuesa.png";
 
 const heroImages = [mainImg, imgZarza, imgFresa, imgArandano, imgFrambuesa];
 ---
 
-<section class="pt-32 pb-[8%] bg-gray-50 overflow-hidden font-sans">
+<section class="pt-20 md:pt-32 pb-[8%] bg-gray-50 overflow-hidden font-sans">
   <div class="max-w-[1200px] mx-auto px-5 flex flex-wrap items-center gap-10">
     <div
       class="flex-1 min-w-[300px] flex flex-col items-center text-center order-1"

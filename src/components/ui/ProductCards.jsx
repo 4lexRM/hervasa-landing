@@ -4,10 +4,10 @@ import { X, CalendarCheck, BarChart3 } from 'lucide-react';
 
 // --- IMPORTACIÓN DE IMÁGENES LOCALES ---
 // Asegúrate de que los nombres y extensiones coincidan con tu carpeta assets
-import imgFresa from '../assets/fresa.jpg';
-import imgZarza from '../assets/zarzamora.png';
-import imgArandano from '../assets/arandano.png';
-import imgFrambuesa from '../assets/frambuesa.png';
+import imgFresa from '../../assets/fresa.jpg';
+import imgZarza from '../../assets/zarzamora.png';
+import imgArandano from '../../assets/arandano.png';
+import imgFrambuesa from '../../assets/frambuesa.png';
 
 const fruits = [
   {
