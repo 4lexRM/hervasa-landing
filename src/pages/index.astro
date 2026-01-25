@@ -7,16 +7,31 @@ import About from '../components/content/About.astro';
 import FruitsGrid from '../components/content/Products.astro';
 import Process from '../components/content/Processes.astro';
 import Certifications from '../components/content/Certifications.astro';
-import Contact from '../components/content/Contact.astro'; // Nueva importación
-import Footer from '../components/includes/Footer.astro'; // Importar
+import Contact from '../components/content/Contact.astro'; 
+import Footer from '../components/includes/Footer.astro'; 
+
+import mainImg from "../assets/logo-grande.webp";
+import imgFresa from "../assets/fresa.webp";
+import imgZarza from "../assets/zarzamora.webp";
+import imgArandano from "../assets/arandano.webp";
+import imgFrambuesa from "../assets/frambuesa.webp";
+
+const heroImages = [mainImg, imgZarza, imgFresa, imgArandano, imgFrambuesa];
+const fruitsData = [
+  { name: 'Fresa', color: '#ef4444', image: imgFresa },
+  { name: 'Zarzamora', color: '#581c87', image: imgZarza },
+  { name: 'Arándano', color: '#1d4ed8', image: imgArandano },
+  { name: 'Frambuesa', color: '#db2777', image: imgFrambuesa }
+];
 ---
+
 
 <Layout title="Hervasa Berries | Calidad de Exportación">
 	<main>
 		<Navbar client:load />
-		<Hero />
+		<Hero heroImages={heroImages}/>
 		<About />
-		<FruitsGrid />
+		<FruitsGrid fruitsData={fruitsData}/>
 		<Process />
 		<Certifications />
 		<Contact />

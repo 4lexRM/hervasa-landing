@@ -1,10 +1,15 @@
 ---
 import ProductCards from '../ui/ProductCards.jsx';
+
+interface Props {
+  fruitsData: any[];
+}
+
+const { fruitsData } = Astro.props;
 ---
 
 <section id="productos" class="pt-4 pb-20 md:pt-[2%] bg-gray-50 font-sans">
   <div class="max-w-[1200px] mx-auto px-5">
-    
     <div class="text-center mb-8">
       <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
         Nuestras Berries
@@ -14,7 +19,6 @@ import ProductCards from '../ui/ProductCards.jsx';
       </p>
     </div>
 
-    <ProductCards client:visible />
-
+    <ProductCards client:visible fruits={fruitsData} />
   </div>
 </section>
