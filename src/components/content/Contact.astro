@@ -1,6 +1,5 @@
 ---
 import { Mail, MessageCircle, Facebook, Instagram, Phone } from 'lucide-react';
-import mapImage from '../../assets/mapa.webp';
 ---
 
 <section id="contacto" class="py-16 bg-white font-sans overflow-hidden">
@@ -13,15 +12,13 @@ import mapImage from '../../assets/mapa.webp';
       <div class="w-24 h-1.5 bg-[#1da44c] mx-auto mt-4 rounded-full"></div>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      
-      <div class="lg:col-span-8 bg-gray-50 rounded-[30px] p-8 md:p-12 border border-gray-100 shadow-sm text-center">
+    <div class="max-w-4xl mx-auto bg-gray-50 rounded-[30px] p-8 md:p-12 border border-gray-100 shadow-sm text-center">
         
         <h3 class="text-3xl font-black text-gray-900 mb-3">
           Hablemos de <span class="text-[#1da44c]">Negocios</span>
         </h3>
         <p class="text-gray-500 mb-10 text-base max-w-2xl mx-auto">
-          Estamos listos para atenderte. Contáctanos directamente para cotizaciones, alianzas logísticas o más información sobre nuestros procesos y pruductos.
+          Estamos listos para atenderte. Contáctanos directamente para cotizaciones, alianzas logísticas o más información sobre nuestros procesos y productos.
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
@@ -60,51 +57,6 @@ import mapImage from '../../assets/mapa.webp';
              <a href="https://www.instagram.com/hervsaberries?igsh=MWJxcXMwMG5maHcydQ==" target="_blank" class="p-3 bg-white rounded-full text-pink-600 shadow-sm border hover:scale-110 transition-transform"><Instagram size={24} /></a>
           </div>
         </div>
-
-      </div>
-
-      <div class="lg:col-span-4 text-center flex flex-col items-center justify-center">
-        
-        <div class="mb-8">
-          <div class="inline-flex items-center justify-center gap-2 mb-3">
-            
-            <h3 class="text-2xl font-bold text-gray-900">
-              Destacar <span class="text-[#1da44c]">que: </span>
-            </h3>
-          </div>
-          
-          <p class="text-gray-600 leading-relaxed font-medium text-sm">
-            Actualmente, Hervasa comercializa producto a la mayor parte de los estados de la <strong class="text-gray-900">República Mexicana</strong>. 
-            <br>
-            Simultáneamente, mantenemos una actividad de exportación internacional hacia <strong class="text-gray-900">Estados Unidos y Canadá</strong>.
-          </p>
-        </div>
-
-        <div class="relative w-full max-w-[280px] aspect-[4/3]">
-          
-          <div 
-            class="absolute inset-0 bg-contain bg-center bg-no-repeat"
-            style={`background-image: url('${mapImage.src}');`}
-          >
-          </div>
-          
-          <div class="absolute top-[65%] left-[35%] flex flex-col items-center">
-            <div class="w-3 h-3 bg-[#1da44c] rounded-full shadow-sm border border-white"></div>
-            <span class="mt-1 text-[9px] font-bold text-[#1da44c] bg-white border border-gray-100 px-2 py-0.5 rounded shadow-sm">México</span>
-          </div>
-
-          <div class="absolute top-[45%] left-[50%] flex flex-col items-center">
-            <div class="w-3 h-3 bg-blue-600 rounded-full shadow-sm border border-white"></div>
-            <span class="mt-1 text-[9px] font-bold text-gray-600 bg-white border border-gray-100 px-2 py-0.5 rounded shadow-sm">USA</span>
-          </div>
-
-          <div class="absolute top-[30%] left-[45%] flex flex-col items-center">
-            <div class="w-3 h-3 bg-red-600 rounded-full shadow-sm border border-white"></div>
-            <span class="mt-1 text-[9px] font-bold text-gray-600 bg-white border border-gray-100 px-2 py-0.5 rounded shadow-sm">Canadá</span>
-          </div>
-        </div>
-
-      </div>
 
     </div>
   </div>

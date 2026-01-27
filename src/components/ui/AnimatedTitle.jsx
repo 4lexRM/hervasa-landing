@@ -19,7 +19,7 @@ const AnimatedTitle = () => {
       }}
     >
       Cosechamos <br /> 
-      <span className="text-[#1da44c]">calidad y frescura</span>  
+      <span className="text-[#1da44c]">Calidad y Frescura</span>  
     </motion.h1>
   );
 };

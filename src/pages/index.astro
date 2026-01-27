@@ -7,6 +7,7 @@ import About from '../components/content/About.astro';
 import FruitsGrid from '../components/content/Products.astro';
 import Process from '../components/content/Processes.astro';
 import Certifications from '../components/content/Certifications.astro';
+import Alcance from '../components/content/Alcance.astro';
 import Contact from '../components/content/Contact.astro'; 
 import Footer from '../components/includes/Footer.astro'; 
 
@@ -26,7 +27,8 @@ const fruitsData = [
 ---
 
 
-<Layout title="Hervasa Berries | Calidad de Exportación">
+<Layout title="Hervasa Berries | Exportación de Calidad"
+  description="Líderes en exportación de Berries desde Michoacán. Cultivamos y comercializamos Zarzamora, Fresa y Arándano con certificación internacional para USA y Canadá.">
 	<main>
 		<Navbar client:load />
 		<Hero heroImages={heroImages}/>
@@ -34,6 +36,7 @@ const fruitsData = [
 		<FruitsGrid fruitsData={fruitsData}/>
 		<Process />
 		<Certifications />
+		<Alcance/>
 		<Contact />
 		<Footer /> </main>
 </Layout>
