@@ -2,22 +2,22 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, CalendarCheck, BarChart3 } from 'lucide-react';
 
-// Variantes para el contenedor (el Grid)
+// Variantes para el contenedor (el Grid) - COD 1
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.3 // Esto hace que aparezcan uno tras otro
+      staggerChildren: 0.3 
     }
   }
 };
 
-// Variantes para cada tarjeta individual
+// Variantes para cada tarjeta individual - COD 1
 const cardVariants = {
   hidden: { 
     opacity: 0, 
-    y: 30 // Aparece desde abajo
+    y: 30 
   },
   visible: { 
     opacity: 1, 
@@ -45,7 +45,7 @@ const ProductCards = ({ fruits }) => {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.1 }} // Se activa apenas entra un poco en pantalla
+        viewport={{ once: false, amount: 0.1 }}
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
       >
         {fruits.map((fruit, index) => (
@@ -80,7 +80,83 @@ const ProductCards = ({ fruits }) => {
         ))}
       </motion.div>
 
-      {/* ... (El resto del Modal se mantiene igual) ... */}
+      {/* --- MODAL AGREGADO DEL CODIGO 2 --- */}
+      <AnimatePresence>
+        {selectedFruit && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+            onClick={() => setSelectedFruit(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white p-8 rounded-3xl w-full max-w-xl relative shadow-2xl"
+            >
+              {/* Botón cerrar (X) */}
+              <button 
+                onClick={() => setSelectedFruit(null)} 
+                className="absolute top-5 right-5 w-9 h-9 flex items-center justify-center bg-gray-100 rounded-full text-gray-700 hover:bg-gray-200 transition-colors"
+              >
+                <X size={20} />
+              </button>
+
+              <div className="text-center mb-8">
+                <h3 
+                  className="text-3xl font-black mb-2"
+                  style={{ color: selectedFruit.color }}
+                >
+                  {selectedFruit.name}
+                </h3>
+                <div className="flex items-center justify-center gap-2 text-gray-500 font-medium">
+                  <CalendarCheck size={18} />
+                  <span>Calendario de Cosecha</span>
+                </div>
+              </div>
+
+              {/* --- GRÁFICA DE DISPONIBILIDAD (BARRAS) --- */}
+              <div className="flex justify-between h-40 gap-1">
+                {getAvailability(selectedFruit.name).map((isAvailable, i) => (
+                  <div key={i} className="flex flex-col items-center flex-1 h-full justify-end">
+                    
+                    {/* Barra Animada */}
+                    <motion.div 
+                      initial={{ height: 0 }}
+                      animate={{ height: isAvailable ? '100%' : '30%' }}
+                      transition={{ duration: 0.5, delay: i * 0.05 }}
+                      className={`w-full max-w-[30px] rounded mb-2 ${
+                        isAvailable ? 'bg-[#1da44c]' : 'bg-red-500/30'
+                      }`}
+                    />
+                    
+                    {/* Nombre del mes */}
+                    <span className="text-[10px] font-bold text-gray-600 uppercase">
+                      {months[i]}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Leyenda inferior */}
+              <div className="flex justify-center gap-6 mt-6 text-sm font-medium">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-[#1da44c] rounded-full"></div>
+                  <span className="text-gray-700">Disponible</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-red-500/30 rounded-full"></div>
+                  <span className="text-gray-400">No temporada</span>
+                </div>
+              </div>
+
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

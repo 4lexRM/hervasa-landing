@@ -1,0 +1,47 @@
+---
+import mapImage from '../../assets/mapa.webp';
+---
+
+<section id="alcance" class="py-16 bg-white font-sans overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 text-center">
+    
+    <div class="mb-10">
+        <h2 class="text-4xl md:text-5xl font-black text-gray-900">
+            Alcance
+        </h2>
+        <div class="w-24 h-1.5 bg-[#1da44c] mx-auto mt-4 rounded-full"></div>
+    </div>
+
+    <p class="text-gray-600 leading-relaxed font-medium text-lg max-w-3xl mx-auto mb-12">
+        Actualmente, Hervasa comercializa producto a la mayor parte de los estados de la <strong class="text-gray-900">República Mexicana</strong>. 
+        <br>
+        Simultáneamente, mantenemos una actividad de exportación internacional hacia <strong class="text-gray-900">Estados Unidos y Canadá</strong>.
+    </p>
+
+    <div class="relative w-full max-w-2xl mx-auto aspect-video md:aspect-[2/1]">
+        
+        <div 
+        class="absolute inset-0 bg-contain bg-center bg-no-repeat"
+        style={`background-image: url('${mapImage.src}');`}
+        >
+        </div>
+        
+        <div class="absolute top-[65%] left-[35%] flex flex-col items-center">
+        <div class="w-4 h-4 bg-[#1da44c] rounded-full shadow-sm border-2 border-white"></div>
+        <span class="mt-2 text-[10px] font-bold text-[#1da44c] bg-white border border-gray-100 px-3 py-1 rounded-full shadow-md">México</span>
+        </div>
+
+        <div class="absolute top-[45%] left-[50%] flex flex-col items-center">
+        <div class="w-4 h-4 bg-blue-600 rounded-full shadow-sm border-2 border-white"></div>
+        <span class="mt-2 text-[10px] font-bold text-gray-600 bg-white border border-gray-100 px-3 py-1 rounded-full shadow-md">USA</span>
+        </div>
+
+        <div class="absolute top-[30%] left-[45%] flex flex-col items-center">
+        <div class="w-4 h-4 bg-red-600 rounded-full shadow-sm border-2 border-white"></div>
+        <span class="mt-2 text-[10px] font-bold text-gray-600 bg-white border border-gray-100 px-3 py-1 rounded-full shadow-md">Canadá</span>
+        </div>
+
+    </div>
+
+  </div>
+</section>

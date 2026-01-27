@@ -1,38 +1,48 @@
 ---
 interface Props {
-    title: string;
+  title: string;
+  description?: string; // Hacemos la descripción opcional pero recomendada
 }
-const { title } = Astro.props;
+
+// Valores por defecto si no se los mandas
+const { 
+  title, 
+  description = "Hervasa Berries: Exportación de berries de alta calidad desde Michoacán, México. Zarzamora, Fresa, Arándano y Frambuesa con estándares internacionales."
+} = Astro.props;
+
+const image = "/social-image.jpg"; // (Opcional) Una imagen para cuando compartes el link
 ---
 
 <!doctype html>
 <html lang="es" class="scroll-smooth">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        
-        <link rel="icon" type="image/png" href="/logo.png" />
-        <link rel="preload" as="image" href="/_astro/src/assets/nombre-de-tu-primera-imagen.webp" />
-        
-        <title>{title}</title>
-        
-        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
     
-    <body class="bg-white text-slate-900 antialiased font-sans">
-        <slot />
+    <meta name="keywords" content="berries, exportación, michoacán, zarzamora, fresa, arándano, agricultura, méxico, hervasa" />
+    
+    <meta name="author" content="Hervasa Berries" />
+    <meta name="robots" content="index, follow" /> <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hervasaberries.com" /> <meta property="og:image" content={image} />
 
-        <style is:global>
-            /* Mantenemos solo la fuente de los títulos */
-            h1, h2, h3, .font-outfit { 
-                font-family: 'Outfit', sans-serif; 
-            }
+    <link rel="preload" as="image" href="/_astro/src/assets/logo-grande.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  </head>
+  
+  <body class="bg-white text-slate-900 antialiased font-sans">
+    <slot />
 
-            /* Eliminamos las utilidades de móvil porque ahora 
-               usaremos clases nativas de Tailwind:
-               .hidden-mobile  =>  hidden md:block
-               .visible-mobile =>  block md:hidden
-            */
-        </style>
-    </body>
+    <style is:global>
+      h1, h2, h3, .font-outfit { 
+        font-family: 'Outfit', sans-serif; 
+      }
+    </style>
+  </body>
 </html>

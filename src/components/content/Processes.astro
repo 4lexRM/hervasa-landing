@@ -1,5 +1,11 @@
 ---
 import ProcessSteps from '../ui/ProcessSteps';
+
+// --- IMPORTA AQUÍ TUS 3 ICONOS ---
+// Asegúrate de cambiar "nombre-icono.png" por el nombre real de tus archivos en assets
+import iconSocios from '../../assets/icono-socios.png'; 
+import iconHervasa from '../../assets/icono-empresa.png';
+import iconComprador from '../../assets/icono-comprador.png';
 ---
 
 <section id="proceso" class="py-24 bg-white font-sans">
@@ -14,7 +20,13 @@ import ProcessSteps from '../ui/ProcessSteps';
       </p>
     </div>
 
-    <ProcessSteps client:visible />
+    {/* Pasamos las imágenes como propiedades al componente */}
+    <ProcessSteps 
+      client:visible 
+      imgSocios={iconSocios}
+      imgHervasa={iconHervasa}
+      imgComprador={iconComprador}
+    />
 
   </div>
 </section>
