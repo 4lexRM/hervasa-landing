@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.hervasaberries.com.mx/sitemap-index.xml
